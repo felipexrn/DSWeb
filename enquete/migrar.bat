@@ -1,0 +1,1 @@
+python manage.py makemigrations enquete; python manage.py sqlmigrate enquete 0001; python manage.py migrate
