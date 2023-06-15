@@ -25,8 +25,11 @@ SECRET_KEY = 'django-insecure-h!5@ong*us!!c*ph17(-%$6ck13b&7rad^-ui+-^-dbltn7-@6
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['FelipeXavier.pythonanywhere.com']
+ALLOWED_HOSTS = ['FelipeXavier.pythonanywhere.com', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = [
+    'https://felipexrn-orange-parakeet-wp4g7pgww77295v7-8000.preview.app.github.dev'
+]
 
 # Application definition
 
