@@ -1,5 +1,10 @@
 {% if latest_question_list %}
     <h1>Aplicação de Enquetes</h1>
+    <form action="{% url 'enquete:search'  %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="input_question"></input>
+        <input type="submit" value="Pesquisar">
+    </form>
     <ul>
     {% for question in latest_question_list %}
         <li><a href="{% url 'enquete:detail' question.id %}">{{ question.question_text }}</a></li>

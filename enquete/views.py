@@ -10,6 +10,12 @@ class IndexView(View):
         context = {'latest_question_list': latest_question_list}
         return render(request, 'enquete/index.html', context)
 
+class SearchView(View):
+    def post(self, request, *args, **kwargs):
+        searched_question_list = Question.objects.filter(question_text__icontains=request.POST['input_question'])
+        context = {'searched_question_list': searched_question_list}
+        return render(request, 'enquete/search.html', context)
+
 class DetailView(View):
     def get(self, request, *args, **kwargs):
         question = get_object_or_404(Question, pk = kwargs['pk'])
