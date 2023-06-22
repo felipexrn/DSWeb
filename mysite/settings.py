@@ -34,6 +34,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'home.apps.HomeConfig',
     'enquete.apps.EnqueteConfig',
     'django.contrib.admin',
     'django.contrib.auth',
