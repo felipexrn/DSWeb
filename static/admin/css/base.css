@@ -6,8 +6,8 @@
 
 /* VARIABLE DEFINITIONS */
 :root {
-  --primary: #79aec8;
-  --secondary: #417690;
+  --primary: #79c8b7;
+  --secondary: #1f6352;
   --accent: #f5dd5d;
   --primary-fg: #fff;
 
@@ -59,7 +59,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #264b5d;
+    --primary: #265d3d;
     --primary-fg: #eee;
 
     --body-fg: #eeeeee;
@@ -84,7 +84,7 @@
 
     --darkened-bg: #212121;
     --selected-bg: #1b1b1b;
-    --selected-row: #00363a;
+    --selected-row: #003a1a;
 
     --close-button-bg: #333333;
     --close-button-hover-bg: #666666;
