@@ -23,4 +23,4 @@ class Lancamento(models.Model):
     foto = models.ImageField(upload_to='static/img/financas', default='static/img/financas/DiagramaDominioFinancas.png')
     despesa = models.BooleanField(default=False)
     def __str__(self):
-        return self.nome
+        return self.descricao
