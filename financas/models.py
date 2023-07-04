@@ -4,7 +4,7 @@ from django.utils import timezone
 
 class Usuario(models.Model):
     nome = models.CharField(max_length=200)
-    senha = models.CharField(min_length=8)
+    senha = models.CharField(max_length=20)
     status = models.BooleanField
     def __str__(self):
         return self.nome

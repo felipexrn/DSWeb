@@ -1,3 +1,6 @@
 from django.contrib import admin
+from .models import Usuario, Balancete, Lancamento
 
-# Register your models here.
+admin.site.register (Usuario)
+admin.site.register (Balancete)
+admin.site.register (Lancamento)
