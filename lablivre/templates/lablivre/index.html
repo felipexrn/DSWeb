@@ -1,0 +1,14 @@
+{% if laboratorios %}
+    <h1>LabLivre</h1>
+    <ul>
+    {% for lab in laboratorios %}
+        {% for lab.computador_set.filter(status=True) %}
+            {{ forloop.counter }}
+        {% endfor %}
+        <li>{{ lab.nome }} - {{ forloop.counter }} computadores livres</li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>Nenhum laboratório cadastrado até o momento!</p>
+{% endif %}
+<a href="{% url 'home:index' %}">Voltar para Home</a>

@@ -34,6 +34,7 @@ CSRF_TRUSTED_ORIGINS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'lablivre.apps.LablivreConfig',
     'financas.apps.FinancasConfig',
     'home.apps.HomeConfig',
     'enquete.apps.EnqueteConfig',
