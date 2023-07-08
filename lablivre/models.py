@@ -12,11 +12,6 @@ class Computador(models.Model):
     mac = models.CharField(max_length=200)
     ligado = models.DateTimeField('ligado')
     desligado = models.DateTimeField('desligado')
-    status = models.BooleanField(default=False)
-    def atualiza_status(self):
-        if ligado > desligado:
-            status = True
-        else:
-            status = False
+    status = models.BooleanField(default = False)
     def __str__(self):
         return self.mac
