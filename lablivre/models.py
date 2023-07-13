@@ -1,5 +1,4 @@
 from django.db import models
-import datetime
 from django.utils import timezone
 
 class Laboratorio(models.Model):
@@ -9,9 +8,13 @@ class Laboratorio(models.Model):
 
 class Computador(models.Model):
     laboratorio = models.ForeignKey(Laboratorio, on_delete=models.CASCADE)
-    mac = models.CharField(max_length=200)
+    patrimonio = models.CharField(max_length=200)
     ligado = models.DateTimeField('ligado')
-    desligado = models.DateTimeField('desligado')
-    status = models.BooleanField(default = False)
+    def __str__(self):
+        return self.patrimonio
+
+class Mac(models.Model):
+    computador = models.ForeignKey(Computador, on_delete=models.CASCADE)
+    mac = models.CharField(max_length=200)
     def __str__(self):
         return self.mac
