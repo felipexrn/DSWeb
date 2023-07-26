@@ -1,0 +1,11 @@
+{% extends 'financas/base.html' %}
+{% block conteudo %}
+    <h3>Dados do Balancete</h3>
+    <form action="{% url 'financas:novo_balancete' %}" method="post">
+        {% csrf_token %}
+        Nome do balancete:<br/>
+        <input type="text" name="nome"></input><br/>
+        <input type="submit" value="Cadastrar Balancete">
+    </form>
+    <a href="{% url 'financas:index' %}">Voltar para balancetes</a><br/>
+{% endblock %}

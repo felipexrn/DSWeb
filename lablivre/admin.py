@@ -1,23 +1,11 @@
 from django.contrib import admin
-from .models import Laboratorio, Computador, Mac
-
-class MacInline(admin.TabularInline):
-    model = Mac
-    extra = 1
-    list_display = ['computador','mac']
-    list_filter = ['mac']
-    search_fields = ['mac']
-
-class ComputadorAdmin(admin.ModelAdmin):
-    fieldsets = [(None, {'fields': ['patrimonio'], 'fields': ['ligado'],})]
-    inlines = [MacInline]
-admin.site.register(Computador, ComputadorAdmin)
+from .models import Laboratorio, Computador
 
 class ComputadorInline(admin.TabularInline):
     model = Computador
     extra = 1
     show_change_link = True
-    list_display = ['patrimonio', 'ligado']
+    list_display = ['patrimonio', 'identificador','ligado']
     list_filter = ['ligado']
     search_fields = ['patrimonio']
     

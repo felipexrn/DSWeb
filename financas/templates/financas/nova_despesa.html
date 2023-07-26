@@ -1,0 +1,16 @@
+{% extends 'financas/base.html' %}
+{% block conteudo %}
+    <h3>Dados da Despesa</h3>
+    <form action="{% url 'financas:novo_lancamento' balancete.id %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="balancete_id" value="{{ balancete.id }}"></input><br/>
+        Descrição da receita:<br/>
+        <input type="text" name="descricao"></input><br/>
+        Valor da receita:<br/>
+        <input type="number" step="0.01" name="valor"></input><br/>
+        Foto da receita:<br/>
+        <input type="file" name="imagem" accept="image/*"><br/>
+        <input type="hidden" name="despesa" value="{{ True }}"></input><br/>
+        <input type="submit" value="Cadastrar Receita">
+    </form>
+{% endblock %}

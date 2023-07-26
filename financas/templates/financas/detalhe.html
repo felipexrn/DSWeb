@@ -1,1 +1,43 @@
-Detalhe do Balancete
+{% extends 'financas/base.html' %}
+{% block conteudo %}
+    <h3>{{ balancete.nome }}</h3>
+    <a href="{% url 'financas:nova_receita' balancete.id %}">Adicionar receita</a><br/>
+    <a href="{% url 'financas:nova_despesa' balancete.id %}">Adiconar despesa</a><br/>    
+    {% if balancete.lancamento_set.all %}
+        <table>
+            <tr>
+                <thead>
+                    <th>Lancamento</th>
+                    <th>Receita</th>
+                    <th>Despesa</th>
+                </thead>
+            </tr>
+            <tbody>
+            {% for lancamento in balancete.lancamento_set.all %}
+                <tr>
+                {% if lancamento.despesa %}
+                    <td><a href="{% url 'financas:lancamento' balancete.id lancamento.id %}">{{ lancamento.descricao }}</a></td>
+                    <td></td>
+                    <td>-{{lancamento.valor|floatformat:2}}</td> 
+                {% else %}
+                    <td><a href="{% url 'financas:lancamento' balancete.id lancamento.id %}">{{ lancamento.descricao }}</a></td>
+                    <td>{{lancamento.valor|floatformat:2}}</td>
+                    <td></td>
+                {% endif %}
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfooter>
+                <tr>
+                    <th>Totais</th>
+                    <th>{{ balancete.total_receitas|floatformat:2 }}</th>
+                    <th>{{ balancete.total_despesas|floatformat:2 }}</th>
+                </tr>
+            </tfooter>
+        </table>
+        <h4>Saldo total: {{ balancete.saldo_total|floatformat:2 }}</h4>
+    {% else %}
+        <p>Nenhum lançamento encontrado!</p>
+    {% endif %}
+    <a href="{% url 'financas:index' %}">Voltar para balancetes</a><br/>
+{% endblock %}

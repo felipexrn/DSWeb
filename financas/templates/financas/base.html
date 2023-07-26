@@ -1,0 +1,9 @@
+<h1>Aplicação de Finanças Pessoais</h1>
+{% if user.username %}
+    Bem vinde, {{user.first_name}}!
+{% else %}
+    <a href="{% url 'financas:login' %}">Login</a>
+{% endif %}
+
+{% block conteudo %}{% endblock %}
+<a href="{% url 'home:index' %}">Voltar para Home</a>

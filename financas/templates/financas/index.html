@@ -1,16 +1,19 @@
-{% if balancetes %}
-    <h1>Aplicação de Financas Pessoais</h1>
-    <form action="{% url 'financas:busca' %}" method="post">
-        {% csrf_token %}
-        <input type="text" name="nome"></input>
-        <input type="submit" value="Pesquisar">
-    </form>
-    <ul>
-    {% for balancete in balancetes %}
-        <li><a href="{% url 'financas:detalhe' balancete.id %}">{{ balancete.nome }}</a></li>
-    {% endfor %}
-    </ul>
-{% else %}
-    <p>Nenhum balancete cadastrado até o momento!</p>
-{% endif %}
-<a href="{% url 'home:index' %}">Voltar para Home</a>
+{% extends 'financas/base.html' %}
+{% block conteudo %}
+    <a href="{% url 'financas:novo_balancete' %}">Criar novo Balancete</a>
+    {% if balancetes %}
+        <form action="{% url 'financas:busca' %}" method="post">
+            {% csrf_token %}
+            Pesquisar Balancete por nome: <br/>
+            <input type="text" name="nome"></input>
+            <input type="submit" value="Pesquisar">
+        </form>
+        <ul>
+        {% for balancete in balancetes %}
+            <li><a href="{% url 'financas:detalhe' balancete.id %}">{{ balancete.nome }}, {{balancete.data}}, {{balancete.usuario}}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Nenhum balancete encontrado!</p>
+    {% endif %}
+{% endblock %}

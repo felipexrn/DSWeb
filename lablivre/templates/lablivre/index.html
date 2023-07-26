@@ -2,7 +2,7 @@
     <h1>LabLivre</h1>
     <ul>
     {% for lab in laboratorios %}
-        <li>{{ lab.nome }} - computadores livres: {{ desligados | length }} - {{ lab.computador_set.filter | length }}</li>
+        <li>{{ lab.nome }} - computadores livres: {{ lab.get_desligados }}</li>
     {% endfor %}
     </ul>
 {% else %}

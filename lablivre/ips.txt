@@ -1,0 +1,81 @@
+
+Configuraá∆o de IP do Windows
+
+   Nome do host. . . . . . . . . . . . . . . . : cnat407159
+   Sufixo DNS prim†rio . . . . . . . . . . . . : ifrn.local
+   Tipo de n¢. . . . . . . . . . . . . . . . . : h°brido
+   Roteamento de IP ativado. . . . . . . . . . : n∆o
+   Proxy WINS ativado. . . . . . . . . . . . . : n∆o
+   Lista de pesquisa de sufixo DNS . . . . . . : ifrn.local
+
+Adaptador de Rede sem Fio Conex∆o Local* 2:
+
+   Estado da m°dia. . . . . . . . . . . . . .  : m°dia desconectada
+   Sufixo DNS espec°fico de conex∆o. . . . . . : 
+   Descriá∆o . . . . . . . . . . . . . . . . . : Microsoft Wi-Fi Direct Virtual Adapter #2
+   Endereáo F°sico . . . . . . . . . . . . . . : 9A-3B-8F-E7-E0-C3
+   DHCP Habilitado . . . . . . . . . . . . . . : N∆o
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
+
+Adaptador Ethernet Ethernet:
+
+   Sufixo DNS espec°fico de conex∆o. . . . . . : ifrn.local
+   Descriá∆o . . . . . . . . . . . . . . . . . : Intel(R) Ethernet Connection (7) I219-LM
+   Endereáo F°sico . . . . . . . . . . . . . . : D0-94-66-DC-B6-FA
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
+   Endereáo IPv4. . . . . . . .  . . . . . . . : 10.25.2.242(Preferencial) 
+   M†scara de Sub-rede . . . . . . . . . . . . : 255.255.0.0
+   Concess∆o Obtida. . . . . . . . . . . . . . : segunda-feira, 10 de julho de 2023 14:28:36
+   Concess∆o Expira. . . . . . . . . . . . . . : sexta-feira, 21 de julho de 2023 11:35:28
+   Gateway Padr∆o. . . . . . . . . . . . . . . : 10.25.0.1
+   Servidor DHCP . . . . . . . . . . . . . . . : 10.25.0.159
+   Servidores DNS. . . . . . . . . . . . . . . : 10.30.0.158
+                                                 10.30.0.155
+   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado
+
+Adaptador Ethernet VMware Network Adapter VMnet1:
+
+   Sufixo DNS espec°fico de conex∆o. . . . . . : 
+   Descriá∆o . . . . . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet1
+   Endereáo F°sico . . . . . . . . . . . . . . : 00-50-56-C0-00-01
+   DHCP Habilitado . . . . . . . . . . . . . . : N∆o
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
+   Endereáo IPv4. . . . . . . .  . . . . . . . : 192.168.253.1(Preferencial) 
+   M†scara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+   Gateway Padr∆o. . . . . . . . . . . . . . . : 
+   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado
+
+Adaptador Ethernet VMware Network Adapter VMnet8:
+
+   Sufixo DNS espec°fico de conex∆o. . . . . . : 
+   Descriá∆o . . . . . . . . . . . . . . . . . : VMware Virtual Ethernet Adapter for VMnet8
+   Endereáo F°sico . . . . . . . . . . . . . . : 00-50-56-C0-00-08
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
+   Endereáo IPv4. . . . . . . .  . . . . . . . : 192.168.198.1(Preferencial) 
+   M†scara de Sub-rede . . . . . . . . . . . . : 255.255.255.0
+   Concess∆o Obtida. . . . . . . . . . . . . . : quinta-feira, 13 de julho de 2023 11:34:46
+   Concess∆o Expira. . . . . . . . . . . . . . : quinta-feira, 13 de julho de 2023 12:49:45
+   Gateway Padr∆o. . . . . . . . . . . . . . . : 
+   Servidor DHCP . . . . . . . . . . . . . . . : 192.168.198.254
+   Servidor WINS Prim†rio. . . . . . . . . . . : 192.168.198.2
+   NetBIOS em Tcpip. . . . . . . . . . . . . . : Habilitado
+
+Adaptador de Rede sem Fio Wi-Fi:
+
+   Estado da m°dia. . . . . . . . . . . . . .  : m°dia desconectada
+   Sufixo DNS espec°fico de conex∆o. . . . . . : ifrn.local
+   Descriá∆o . . . . . . . . . . . . . . . . . : Intel(R) Wireless-AC 9560 160MHz
+   Endereáo F°sico . . . . . . . . . . . . . . : 98-3B-8F-E7-E0-C3
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
+
+Adaptador Ethernet Conex∆o de Rede Bluetooth:
+
+   Estado da m°dia. . . . . . . . . . . . . .  : m°dia desconectada
+   Sufixo DNS espec°fico de conex∆o. . . . . . : 
+   Descriá∆o . . . . . . . . . . . . . . . . . : Bluetooth Device (Personal Area Network)
+   Endereáo F°sico . . . . . . . . . . . . . . : 98-3B-8F-E7-E0-C7
+   DHCP Habilitado . . . . . . . . . . . . . . : Sim
+   Configuraá∆o Autom†tica Habilitada. . . . . : Sim
