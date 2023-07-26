@@ -1,6 +1,7 @@
 {% extends 'financas/base.html' %}
 {% block conteudo %}
     <h3>{{ balancete.nome }}</h3>
+    {% include 'financas/busca_lancamento.html' %}
     <a href="{% url 'financas:nova_receita' balancete.id %}">Adicionar receita</a><br/>
     <a href="{% url 'financas:nova_despesa' balancete.id %}">Adiconar despesa</a><br/>    
     {% if balancete.lancamento_set.all %}
@@ -10,20 +11,23 @@
                     <th>Lancamento</th>
                     <th>Receita</th>
                     <th>Despesa</th>
+                    <th></th>
+                    <th></th>
                 </thead>
             </tr>
             <tbody>
-            {% for lancamento in balancete.lancamento_set.all %}
+            {% for lancamento in lancamentos %}
                 <tr>
-                {% if lancamento.despesa %}
-                    <td><a href="{% url 'financas:lancamento' balancete.id lancamento.id %}">{{ lancamento.descricao }}</a></td>
+                <td>{{ lancamento.descricao }}</td>    
+                {% if lancamento.despesa %}  
                     <td></td>
                     <td>-{{lancamento.valor|floatformat:2}}</td> 
                 {% else %}
-                    <td><a href="{% url 'financas:lancamento' balancete.id lancamento.id %}">{{ lancamento.descricao }}</a></td>
                     <td>{{lancamento.valor|floatformat:2}}</td>
                     <td></td>
                 {% endif %}
+                <td><a href="{% url 'financas:detalhe_lancamento' balancete.id lancamento.id %}">Detalhar</a></td>
+                <td><a href="{% url 'financas:excluir_lancamento' balancete.id lancamento.id %}">Excluir</a></td>
                 </tr>
             {% endfor %}
             </tbody>

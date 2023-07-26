@@ -15,5 +15,5 @@
         <img src="{{lancamento.foto}}" alt="{{lancamento.descricao}}" style="max-height:300px">
     {% endif %}
     <br/>
-    <a href="{% url 'financas:detalhe' lancamento.balancete.id %}">Voltar para balancete</a><br/>
+    <a href="{% url 'financas:detalhe_balancete' lancamento.balancete.id %}">Voltar para balancete</a><br/>
 {% endblock %}

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -132,8 +133,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # default static files settings for PythonAnywhere.
 # see https://help.pythonanywhere.com/pages/DjangoStaticFiles for more info
 
-MEDIA_ROOT = '/mysite/media/'
 #MEDIA_ROOT = '/home/FelipeXavier/mysite/media'
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
+
 STATIC_ROOT = '/home/FelipeXavier/mysite/static'
 STATIC_URL = '/static/'
+
+MEDIA_URL = ''
+
+MEDIA_ROOT = BASE_DIR / 'financas'

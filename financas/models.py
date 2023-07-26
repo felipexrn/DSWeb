@@ -2,14 +2,15 @@ from django.db import models
 import datetime
 from django.utils import timezone
 from django.contrib.auth.models import User
+from django.conf import settings
 
 class Usuario(models.Model):
-    usuario = models.OneToOneField(User, on_delete=models.CASCADE)
-    apelido = models.CharField(max_length=200, default="")
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    usuario = models.CharField(max_length=200, default="")
     class Meta:
         verbose_name_plural = 'Usuarios'
     def __str__(self):
-        return self.usuario.first_name
+        return self.usuario
 
 class Balancete(models.Model):
     usuario = models.ForeignKey(Usuario, on_delete=models.CASCADE)
@@ -36,7 +37,7 @@ class Lancamento(models.Model):
     balancete = models.ForeignKey(Balancete, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=200)
     valor = models.FloatField(default=0.0)
-    foto = models.ImageField(upload_to='mysite/media/img/financas/', default='/../mysite/media/img/financas/DiagramaDominioFinancas.png')
+    foto = models.ImageField(upload_to='media/img/financas/', default='media/img/financas/DiagramaDominioFinancas.png')
     despesa = models.BooleanField(default=False)
     def __str__(self):
         return self.descricao

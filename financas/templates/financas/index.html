@@ -1,18 +1,29 @@
 {% extends 'financas/base.html' %}
 {% block conteudo %}
+    {% include 'financas/busca_balancete.html' %}
     <a href="{% url 'financas:novo_balancete' %}">Criar novo Balancete</a>
-    {% if balancetes %}
-        <form action="{% url 'financas:busca' %}" method="post">
-            {% csrf_token %}
-            Pesquisar Balancete por nome: <br/>
-            <input type="text" name="nome"></input>
-            <input type="submit" value="Pesquisar">
-        </form>
-        <ul>
+    {% if balancetes %}     
+        <table>
+            <tr>
+                <thead>
+                    <th>Nome</th>
+                    <th>Criação</th>
+                    <th>Saldo</th>
+                    <th></th>
+                    <th></th>
+                </thead>
+            </tr>
+            <tbody>
         {% for balancete in balancetes %}
-            <li><a href="{% url 'financas:detalhe' balancete.id %}">{{ balancete.nome }}, {{balancete.data}}, {{balancete.usuario}}</a></li>
+            <tr>
+                <td>{{balancete.nome}}</td>
+                <td>{{balancete.data | date:"SHORT_DATE_FORMAT"}}</td>
+                <td>{{balancete.saldo_total | floatformat:2}}</td>
+                <td><a href="{% url 'financas:detalhe_balancete' balancete.id %}">Editar</a></td>
+                <td><a href="{% url 'financas:excluir_balancete' balancete.id %}">Excluir</a></td>
+            </tr>
         {% endfor %}
-        </ul>
+        </table>
     {% else %}
         <p>Nenhum balancete encontrado!</p>
     {% endif %}

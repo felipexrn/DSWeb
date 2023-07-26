@@ -1,0 +1,8 @@
+{% block busca_lancamento %}
+    <form action="{% url 'financas:busca_lancamento' balancete.id %}" method="post">
+        {% csrf_token %}
+        Pesquisar lançamento pela descrição: <br/>
+        <input type="text" name="descricao"></input>
+        <input type="submit" value="Pesquisar">
+    </form>
+{% endblock %}

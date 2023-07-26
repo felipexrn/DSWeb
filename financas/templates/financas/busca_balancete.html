@@ -1,0 +1,8 @@
+{% block busca_balancete %}
+    <form action="{% url 'financas:busca_balancete' %}" method="post">
+        {% csrf_token %}
+        Pesquisar Balancete por nome: <br/>
+        <input type="text" name="nome"></input>
+        <input type="submit" value="Pesquisar">
+    </form>
+{% endblock %}
