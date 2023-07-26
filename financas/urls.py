@@ -23,4 +23,6 @@ urlpatterns = [
 
     # urls autenticação
     path('usuario/cadastrar/', views.CadastraUsuarioView.as_view(), name='cadastrar'),
+    path('usuario/novo/', views.NovoUsuarioView.as_view(), name='novo_usuario'),
+    
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

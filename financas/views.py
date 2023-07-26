@@ -22,6 +22,10 @@ class CadastraUsuarioView(View):
             login(request, user)
         return HttpResponseRedirect(reverse('financas:index'))
 
+class NovoUsuarioView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'financas/novo_usuario.html')
+
 # views do balancete
 @method_decorator(login_required, name='dispatch')
 class IndexView(View):
@@ -29,6 +33,8 @@ class IndexView(View):
         usuario = Usuario.objects.get(user=request.user.id)
         balancetes = Balancete.objects.filter(usuario=usuario).order_by('-data')
         context = {'balancetes': balancetes}
+        print(settings.MEDIA_ROOT)
+        print(settings.MEDIA_URL)
         return render(request, 'financas/index.html', context)      
 
 @method_decorator(login_required, name='dispatch')

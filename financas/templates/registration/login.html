@@ -1,29 +1,14 @@
 {% extends 'financas/base.html' %}
-
 {% block conteudo %}
     <form method="post" action="{% url 'login' %}">
         {% csrf_token %}
-        login
-        <br/>
-        <label>Usuário</label>
-        {{ form.username }}
-        <br/>
-        <label>Senha</label>
-        {{ form.password }}
+        <h3>Login</h3>
+        <div><label>Usuário</label></div>
+        <div>{{ form.username }}</div>
+        <div><label>Senha</label></div>
+        <div>{{ form.password }}</div>
         <br/>
         <input type="hidden" name="next" value="{{next}}"/>
-        <input type="submit" value="Login"/>
-    </form>
-    <form method="post" action="{% url 'financas:cadastrar' %}">
-        {% csrf_token %}
-        Novo Usuário
-        <br/>
-        <label>Usuário</label>
-        <input type="text" name="usuario"/>
-        <br />
-        <label>Senha</label>
-        <input type="password" name="senha"/>
-        <br />
-        <input type="submit" value="Cadastrar"/>
+        <input type="submit" value="Login"/>  <a href="{% url 'financas:novo_usuario' %}"><input type="button" value="Novo Usuario"/></a>
     </form>
 {% endblock %}
