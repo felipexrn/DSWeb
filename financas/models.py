@@ -37,7 +37,7 @@ class Lancamento(models.Model):
     balancete = models.ForeignKey(Balancete, on_delete=models.CASCADE)
     descricao = models.CharField(max_length=200)
     valor = models.FloatField(default=0.0)
-    foto = models.ImageField(upload_to='media/img/financas/', default='media/img/financas/DiagramaDominioFinancas.png')
+    foto = models.ImageField(upload_to='media/img/financas/', default='DiagramaDominioFinancas.png')
     despesa = models.BooleanField(default=False)
     def __str__(self):
         return self.descricao
