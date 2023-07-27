@@ -43,9 +43,12 @@ class Rendimento(models.Model):
     def media(self):
         return int((nota1 * 2 + nota2 * 3) / 5)
     def percent_faltas(self):
+        
         return 
     def aprovado(self):
-        return (self.media() >= 70 and self.percent_faltas() < 25) 
+        return (self.media() >= 70) and (self.percent_faltas() < 25) 
+    def final(self):
+        return media < 70
     def __str__(self):
         return str(self.media())
 
