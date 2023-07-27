@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+admin.site.register (Disciplina)
+admin.site.register (Diario)
+admin.site.register (Rendimento)
+admin.site.register (Aluno)
