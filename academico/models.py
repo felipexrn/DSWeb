@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class Aluno(models.Model):
     nome = models.CharField(max_length=100, default="")
@@ -26,7 +27,7 @@ class Diario(models.Model):
 class Rendimento(models.Model):
     nota1 = models.IntegerField(default=0)
     nota2 = models.IntegerField(
-        default=0
+        default=0,
         validators=[
             MaxValueValidator(100),
             MinValueValidator(0)
