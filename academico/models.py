@@ -9,7 +9,7 @@ class Aluno(models.Model):
 
 class Disciplina(models.Model):
     nome = models.CharField(max_length=100, default="")
-    carga_horaria = models.IntegerField(default=0)
+    carga_horaria = models.IntegerField(default=1)
     def __str__(self):
         return self.nome
 
@@ -19,10 +19,14 @@ class Diario(models.Model):
     ano = models.IntegerField(default=0)
     semestre = models.IntegerField(default=0)
     disciplina = models.ForeignKey(Disciplina, on_delete=models.CASCADE)
-    def percent_conclusao():
-        return 0.0
+    def percent_conclusao(self):
+        diarios = Diario.objects.filter(disciplina=self.disciplina)
+        total_aulas = 0
+        for diario in diarios:
+            total_aulas += diario.num_aulas
+        return total_aulas / self.disciplina.carga_horaria
     def __str__(self):
-        return self.codigo + "." + str(self.ano) + "." + str(semestre)
+        return "código: " + self.codigo + ", " + "ano: " + str(self.ano) + ", " + "semestre: " + str(self.semestre) + ", " + "percentual de conclusão: " + str(self.percent_conclusao())
 
 class Rendimento(models.Model):
     nota1 = models.IntegerField(default=0)
@@ -36,11 +40,11 @@ class Rendimento(models.Model):
     num_faltas = models.IntegerField(default=0)
     diario = models.ForeignKey(Diario, on_delete=models.CASCADE)
     aluno = models.ForeignKey(Aluno, on_delete=models.CASCADE)
-    def media():
+    def media(self):
         return int((nota1 * 2 + nota2 * 3) / 5)
-    def percent_faltas():
+    def percent_faltas(self):
         return 
-    def aprovado():
+    def aprovado(self):
         return (self.media() >= 70 and self.percent_faltas() < 25) 
     def __str__(self):
         return str(self.media())

@@ -9,3 +9,4 @@ class IndexView(View):
         diarios = Diario.objects.all()
         context = {'diarios': diarios}
         return render(request, 'academico/index.html', context)
+    
