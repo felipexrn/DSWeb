@@ -1,7 +1,7 @@
 {% extends 'financas/base.html' %}
 {% block conteudo %}
     <h3>Dados da Despesa</h3>
-    <form action="{% url 'financas:novo_lancamento' balancete.id %}" method="post">
+    <form action="{% url 'financas:novo_lancamento' balancete.id %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <input type="hidden" name="balancete_id" value="{{ balancete.id }}"></input><br/>
         Descrição da despesa:<br/>

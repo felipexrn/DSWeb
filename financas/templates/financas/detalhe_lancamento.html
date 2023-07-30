@@ -12,7 +12,7 @@
     <br/>
     Foto: <br/>
     {% if lancamento.foto %}
-        <img src="{{lancamento.foto}}" alt="{{lancamento.descricao}}" style="max-height:300px">
+        <img src="/financas{{media_url}}{{lancamento.foto}}" alt="{{lancamento.descricao}}" style="max-height:300px">
     {% endif %}
     <br/>
     <a href="{% url 'financas:detalhe_balancete' lancamento.balancete.id %}">Voltar para balancete</a><br/>

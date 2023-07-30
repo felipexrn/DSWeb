@@ -86,7 +86,8 @@ class BuscaLancamentoView(View):
 class DetalheLancamentoView(View):
     def get(self, request, *args, **kwargs):
         lancamento = get_object_or_404(Lancamento, pk = kwargs['lancamento_id'])
-        context = {'lancamento': lancamento}
+        media_url = settings.MEDIA_URL
+        context = {'lancamento': lancamento, 'media_url':media_url}
         return render(request, 'financas/detalhe_lancamento.html', context)
 
 @method_decorator(login_required, name='dispatch')
@@ -109,7 +110,7 @@ class NovoLancamentoView(View):
         balancete = Balancete.objects.get(id=request.POST['balancete_id'])
         descricao = request.POST['descricao']
         valor = request.POST['valor']
-        foto = request.POST['imagem']
+        foto = request.FILES['imagem']
         despesa = request.POST['despesa'] # == "True"
         lancamento = Lancamento(balancete = balancete, descricao = descricao, valor = valor, foto = foto, despesa = despesa)
         lancamento.save()

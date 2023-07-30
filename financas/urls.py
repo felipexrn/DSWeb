@@ -11,7 +11,7 @@ urlpatterns = [
     path('busca_balancete/', views.BuscaBalanceteView.as_view(), name='busca_balancete'),
     path('balancete/<int:balancete_id>/', views.DetalheBalanceteView.as_view(), name='detalhe_balancete'),
     path('novo_balancete/', views.NovoBalanceteView.as_view(), name='novo_balancete'),
-    path('excluir_balancete/<int:pk>/', views.ExcluirBalanceteView.as_view(), name='excluir_balancete'),
+    path('excluir_balancete/<int:balancete_id>/', views.ExcluirBalanceteView.as_view(), name='excluir_balancete'),
     
     # urls lancamentos
     path('balancete/<int:balancete_id>/lancamento/<int:lancamento_id>/', views.DetalheLancamentoView.as_view(), name='detalhe_lancamento'),
