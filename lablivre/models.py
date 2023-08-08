@@ -20,7 +20,7 @@ class Computador(models.Model):
     laboratorio = models.ForeignKey(Laboratorio, on_delete=models.CASCADE)
     identificador = models.UUIDField(default=uuid.uuid4, editable=False)
     patrimonio = models.CharField(max_length=200)
-    ligado = models.DateTimeField('ligado')
+    ligado = models.DateTimeField('ligado', default=timezone.now, editable=False)
     def __str__(self):
         return self.patrimonio
     def desligado(self):

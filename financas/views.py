@@ -33,8 +33,6 @@ class IndexView(View):
         usuario = Usuario.objects.get(user=request.user.id)
         balancetes = Balancete.objects.filter(usuario=usuario).order_by('-data')
         context = {'balancetes': balancetes}
-        print(settings.MEDIA_ROOT)
-        print(settings.MEDIA_URL)
         return render(request, 'financas/index.html', context)      
 
 @method_decorator(login_required, name='dispatch')

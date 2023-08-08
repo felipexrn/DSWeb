@@ -1,0 +1,1 @@
+curl 127.0.0.1:8000/lablivre/ligado/1f1908d9-04d5-4a1f-b17c-e3c65e9563b0/

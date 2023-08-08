@@ -5,9 +5,7 @@ class ComputadorInline(admin.TabularInline):
     model = Computador
     extra = 1
     show_change_link = True
-    list_display = ['patrimonio', 'identificador','ligado']
-    list_filter = ['ligado']
-    search_fields = ['patrimonio']
+    list_display = ['patrimonio']
     
 class LaboratorioAdmin(admin.ModelAdmin):
     fieldsets = [(None, {'fields': ['nome']})]
