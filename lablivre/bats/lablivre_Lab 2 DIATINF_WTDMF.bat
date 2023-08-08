@@ -1,1 +1,1 @@
-curl 127.0.0.1:8000/lablivre/ligado/73fdffb3-bb45-4d25-a0b5-53114216565b/
+curl felipexavier.pythonanywhere.com/lablivre/ligado/73fdffb3-bb45-4d25-a0b5-53114216565b/

@@ -5,6 +5,7 @@ from django.views import View
 from .models import Laboratorio, Computador
 from django.utils import timezone
 import datetime
+from django.conf import settings
 
 class IndexView(View):
     def get(self, request, *args, **kwargs):
@@ -29,7 +30,7 @@ class SetBatsView(View):
         contexto = {'laboratorios': laboratorios}
         for laboratorio in laboratorios:
             for computador in laboratorio.computador_set.all():
-                arquivo = "lablivre/bats/lablivre_" + laboratorio.nome + "_" + computador.patrimonio + ".bat"
+                arquivo = str(settings.BASE_DIR) + "/lablivre/bats/lablivre_" + laboratorio.nome + "_" + computador.patrimonio + ".bat"
                 bat = open(arquivo, "w")
                 bat.write("curl " + request.get_host() + "/lablivre/ligado/" + str(computador.identificador) + "/")
                 bat.close()
@@ -38,5 +39,4 @@ class SetBatsView(View):
 # Para uso no dowload dos arquivos de configuração return FileResponse(open("caminho_do_arquivo", "rb"))
 
 
-        
-        
+
